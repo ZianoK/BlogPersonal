@@ -144,6 +144,7 @@ header .logo{
   text-align: center;
   gap: 20px;
   width: 100%;
+  cursor:pointer;
 }
 
 .articulo h2 {
@@ -242,6 +243,9 @@ input[type="radio"] {
 .contacto button:hover {
   background-color: #2e3e4f;
 }
+
+
+/*FOOTER*/
 
 footer {
   background-color: #222;

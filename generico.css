@@ -1,0 +1,198 @@
+/* Reset y fuentes */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Serif Display", serif;
+  background-color: #f4f4f4;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* asegura que quede por encima de todo */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+  padding: 20px 6%;
+  background: rgba(0, 0, 0, 0.267); /* fondo semi-transparente opcional */
+ 
+}
+
+header .logo{
+  cursor: pointer;
+  font-size: 250%;
+  margin-right: auto;
+  transition: color 0.4s;
+}
+
+
+.logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 100%;
+  transition: color 0.4s;
+}
+
+.logo a:hover {
+  color: rgb(71, 96, 117); 
+}
+
+.nav-left {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-left li a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.nav-left li:hover a {
+  background-color: rgba(94, 128, 156, 0.8);
+}
+
+.btn button {
+  margin-left: 20px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: rgba(94, 128, 156, 0.6);
+  border-radius: 50px;
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn button:hover {
+  background-color: rgb(71, 96, 117);
+}
+
+/* Ajuste del contenido tras header fijo */
+main {
+  padding-top: 80px;
+}
+
+/* Título centrado horizontalmente bajo el navbar */
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 30px auto 20px; /* margen superior para situarlo justo debajo del header */
+  color: #333;
+}
+
+/* Descripción: fondo distinto y texto más grande */
+.page-description {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.6;
+  background-color: #faf0e6; /* color de fondo suave */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.425);
+}
+
+/* Galería responsiva con imágenes más pequeñas */
+.gallery {
+cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  padding: 40px 40px;
+  width:100%;
+  margin: 0 auto;
+  background-color:  #faf0e6;
+}
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.849);
+  width: 90%;
+}
+.gallery-item img {
+  width: 100%;
+  height: 450px; /* tamaño reducido */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+
+/*FOOTER*/
+
+footer {
+  background-color: #222;
+  color: #eee;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+footer a {
+  color: #7dbbe6;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.sobre-mi {
+  background-color: #ffffffbb;
+  padding: 60px 40px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sobre-mi h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.sobre-mi p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Lightbox overlay */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.904);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.lightbox-overlay.active {
+  display: flex;
+}
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
