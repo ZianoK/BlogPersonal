@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detalle de Artículo</title>
   <!-- CSS principal con navbar -->
   <link rel="stylesheet" href="./generico.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Birthstone&family=DM+Serif+Display:ital@0;1&family=Inter:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Special+Gothic+Expanded+One&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Birthstone&family=DM+Serif+Display:ital@0;1&family=Inter:wght@100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Special+Gothic+Expanded+One&display=swap">
 
 </head>
 
@@ -18,6 +20,13 @@
   <!-- Navbar heredado -->
   <header>
     <h1 class="logo"><a href="index.html">Mi B(log)</a></h1>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
     <nav>
       <ul class="nav-left">
         <li><a href="index.html#home">Home</a></li>
@@ -31,7 +40,9 @@
   <main>
     <h1 class="page-title">La fotografía</h1>
     <p class="page-description">
-      Acá destaco algo que me gusta hacer mucho, alejado de la programacion y mi carrera, y es hacer fotos a personas, animales o lugares, suelen estar en formato vertical porque las suelo hacer desde mi celular, despues las suelo retocar un poco con Lightroom.  <br> <b>Cada foto cuenta una historia.</b>
+      Acá destaco algo que me gusta hacer mucho, alejado de la programacion y mi carrera, y es hacer fotos a personas,
+      animales o lugares, suelen estar en formato vertical porque las suelo hacer desde mi celular, despues las suelo
+      retocar un poco con Lightroom. <br> <b>Cada foto cuenta una historia.</b>
     </p>
 
     <div class="gallery">
@@ -54,26 +65,36 @@
   </main>
 
   <footer>
-        <p>&copy; 2024 Tiziano Cristiani. Todos los derechos reservados.</p>
-        <p>Seguime en
-            <a href="https://github.com/ZianoK?tab=repositories">GitHub</a>,
-            <a href="https://www.instagram.com/tizocristiani/">Instagram</a>,
-            <a href="https://www.linkedin.com/in/tiziano-cristiani-320b03248/">LinkedIn</a>.
-        </p>
-    </footer>
+    <p>&copy; 2024 Tiziano Cristiani. Todos los derechos reservados.</p>
+    <p>Seguime en
+      <a href="https://github.com/ZianoK?tab=repositories">GitHub</a>,
+      <a href="https://www.instagram.com/tizocristiani/">Instagram</a>,
+      <a href="https://www.linkedin.com/in/tiziano-cristiani-320b03248/">LinkedIn</a>.
+    </p>
+  </footer>
 
   <script>
-  const lightbox = document.getElementById('lightbox');
-  const lbImg = lightbox.querySelector('img');
-  document.querySelectorAll('.gallery-item img').forEach(img => {
-    img.addEventListener('click', () => {
-      lbImg.src = img.src;
-      lightbox.classList.add('active');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = lightbox.querySelector('img');
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lightbox.classList.add('active');
+      });
     });
-  });
-  lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-  });
-</script>
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+  </script>
+
+  <script>
+    document.querySelectorAll('.articulo').forEach(article => {
+      article.addEventListener('click', () => {
+        window.location.href = article.dataset.url;
+      });
+    });
+  </script>
+
 </body>
+
 </html>

@@ -13,22 +13,35 @@ body {
 }
 
 /* HEADER */
-header {
+
+/*header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 999; /* asegura que quede por encima de todo */
+  z-index: 999;  asegura que quede por encima de todo 
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 60px;
   padding: 20px 6%;
-  background: rgba(0, 0, 0, 0.267); /* fondo semi-transparente opcional */
+  background: rgba(0, 0, 0, 0.267);  fondo semi-transparente opcional 
  
 }
+*/
 
-header .logo{
+header {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  display: flex; align-items: center;
+  padding: 20px 6%; background: rgba(0,0,0,.27);
+  z-index: 999;
+}
+
+header .logo { margin-right: auto; font-size: 250%; }
+.logo a { color: #fff; text-decoration: none; }
+
+/*header .logo{
   cursor: pointer;
   font-size: 250%;
   margin-right: auto;
@@ -41,7 +54,7 @@ header .logo{
   color: white;
   font-size: 100%;
   transition: color 0.4s;
-}
+}*/
 
 .logo a:hover {
   color: rgb(71, 96, 117); 
@@ -51,9 +64,10 @@ header .logo{
   list-style: none;
   display: flex;
   gap: 20px;
+  align-items: center; /*Nuevo*/
 }
 
-.nav-left li a {
+/*.nav-left li a {
   text-decoration: none;
   font-size: 1.3rem;
   color: rgb(255, 255, 255);
@@ -61,10 +75,25 @@ header .logo{
   padding: 8px 12px;
   border-radius: 6px;
 }
+*/
 
-.nav-left li:hover a {
-  background-color: rgba(94, 128, 156, 0.8);
+.nav-left li a, .btn {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background .3s;
 }
+
+.nav-left li:hover a,
+.btn:hover {
+  background: rgba(94,128,156,.8);
+}
+
+/*.nav-left li:hover a {
+  background-color: rgba(94, 128, 156, 0.8);
+}*/
 
 .btn button {
   margin-left: 20px;
@@ -80,6 +109,46 @@ header .logo{
 
 .btn button:hover {
   background-color: rgb(71, 96, 117);
+}
+
+
+/* botón hamburger (invisible en desktop) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+.menu-toggle .bar {
+  width: 25px; height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+/* ———————— responsive ———————— */
+@media screen and (max-width: 768px) {
+  /* mostrar el toggle y ocultar el botón de contacto suelto */
+  .menu-toggle { display: flex; }
+  .btn { display: none; }
+
+  /* menú vertical oculto */
+  .nav-left {
+    position: absolute;
+    top: 60px; right: 6%;
+    flex-direction: column;
+    background: rgba(0,0,0,.9);
+    width: 200px;
+    padding: 10px 0;
+    display: none;
+  }
+  /* al activar */
+  .nav-left.active {
+    display: flex;
+  }
+  .nav-left li {
+    margin: 8px 0;
+    text-align: center;
+  }
 }
 
 /* HERO */

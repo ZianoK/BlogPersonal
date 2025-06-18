@@ -19,6 +19,13 @@
   <!-- Navbar heredado -->
   <header>
     <h1 class="logo"><a href="index.html">Mi B(log)</a></h1>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
     <nav>
       <ul class="nav-left">
         <li><a href="index.html#home">Home</a></li>
@@ -76,6 +83,15 @@
       lightbox.classList.remove('active');
     });
   </script>
+
+  <script>
+    document.querySelectorAll('.articulo').forEach(article => {
+      article.addEventListener('click', () => {
+        window.location.href = article.dataset.url;
+      });
+    });
+  </script>
+
 </body>
 
 </html>

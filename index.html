@@ -17,6 +17,13 @@
     <section class="hero" id="home">
         <header>
             <h1 class="logo"><a href="#home">Mi B(log)</a></h1>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
             <nav>
                 <ul class="nav-left">
                     <li><a href="#home">Home</a></li>
@@ -50,52 +57,54 @@
 
 
     <main>
-        <section class="articulos"  id="articulos" >
+        <section class="articulos" id="articulos">
             <article class="articulo" data-url="una-pasion.html">
-            <h2>Una pasión, el fútbol</h2>
-            <div class="imagen-articulo">
-                <img src="./imagenes/cancha3.jpg" alt="Una pasión, el fútbol">
-            </div>
-            <p>A toda persona algo lo mueve, una pasión, en mi caso es Independiente, desde la cuna hasta el cajón.</p>
-            <time datetime="2024-05-12">12 de mayo de 2024</time>
-        </article>
+                <h2>Una pasión, el fútbol</h2>
+                <div class="imagen-articulo">
+                    <img src="./imagenes/cancha3.jpg" alt="Una pasión, el fútbol">
+                </div>
+                <p>A toda persona algo lo mueve, una pasión, en mi caso es Independiente, desde la cuna hasta el cajón.
+                </p>
+                <time datetime="2024-05-12">12 de mayo de 2024</time>
+            </article>
 
-        <article class="articulo" data-url="mascotas.html">
-            <h2>Algunas de mis mascotas</h2>
-            <div class="imagen-articulo">
-                <img src="./imagenes/boni-oci.jpg" alt="Algunas de mis mascotas">
-            </div>
-            <p>La vida es muy distinta cuando tenes amor puro y verdadero como el de los animales.</p>
-            <time datetime="2024-05-12">12 de mayo de 2024</time>
-        </article>
+            <article class="articulo" data-url="mascotas.html">
+                <h2>Algunas de mis mascotas</h2>
+                <div class="imagen-articulo">
+                    <img src="./imagenes/boni-oci.jpg" alt="Algunas de mis mascotas">
+                </div>
+                <p>La vida es muy distinta cuando tenes amor puro y verdadero como el de los animales.</p>
+                <time datetime="2024-05-12">12 de mayo de 2024</time>
+            </article>
 
-        <article class="articulo" data-url="superheroe.html">
-            <h2>Fan de Spiderman</h2>
-            <div class="imagen-articulo">
-                <img src="./imagenes/spiderman1.jpg" alt="Fan de Spiderman">
-            </div>
-            <p>Desde que tengo memoria es mi superheroe favorito.</p>
-            <time datetime="2024-05-12">12 de mayo de 2024</time>
-        </article>
+            <article class="articulo" data-url="superheroe.html">
+                <h2>Fan de Spiderman</h2>
+                <div class="imagen-articulo">
+                    <img src="./imagenes/spiderman1.jpg" alt="Fan de Spiderman">
+                </div>
+                <p>Desde que tengo memoria es mi superheroe favorito.</p>
+                <time datetime="2024-05-12">12 de mayo de 2024</time>
+            </article>
 
-        <article class="articulo" data-url="viaje.html">
-            <h2>El ultimo viaje</h2>
-            <div class="imagen-articulo">
-                <img src="./imagenes/chile1.jpg" alt="El ultimo viaje">
-            </div>
-            <p>El último viaje tuve la oportunidad de compartirlo con amigos de Mendoza, ojalá volver pronto.</p>
-            <time datetime="2024-05-12">12 de mayo de 2024</time>
-        </article>
+            <article class="articulo" data-url="viaje.html">
+                <h2>El ultimo viaje</h2>
+                <div class="imagen-articulo">
+                    <img src="./imagenes/chile1.jpg" alt="El ultimo viaje">
+                </div>
+                <p>El último viaje tuve la oportunidad de compartirlo con amigos de Mendoza, ojalá volver pronto.</p>
+                <time datetime="2024-05-12">12 de mayo de 2024</time>
+            </article>
 
-        <article class="articulo" data-url="fotografia.html">
-            <h2>Un poco de fotografía</h2>
-            <div class="imagen-articulo">
-                <img src="./imagenes/foto3.jpg" alt="Un poco de fotografía">
-            </div>
-            <p>Porque no hay nada mejor que capturar momentos y escenas de manera permanente, a través de la fotografía.
-            </p>
-            <time datetime="2024-05-12">12 de mayo de 2024</time>
-        </article>
+            <article class="articulo" data-url="fotografia.html">
+                <h2>Un poco de fotografía</h2>
+                <div class="imagen-articulo">
+                    <img src="./imagenes/foto3.jpg" alt="Un poco de fotografía">
+                </div>
+                <p>Porque no hay nada mejor que capturar momentos y escenas de manera permanente, a través de la
+                    fotografía.
+                </p>
+                <time datetime="2024-05-12">12 de mayo de 2024</time>
+            </article>
         </section>
     </main>
 
@@ -122,14 +131,24 @@
             <a href="https://www.linkedin.com/in/tiziano-cristiani-320b03248/">LinkedIn</a>.
         </p>
     </footer>
+
+    <script>
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navLeft    = document.querySelector('.nav-left');
+
+  mobileMenu.addEventListener('click', () => {
+    navLeft.classList.toggle('active');
+  });
+</script>
+
 </body>
 
 <script>
-  document.querySelectorAll('.articulo').forEach(article => {
-    article.addEventListener('click', () => {
-      window.location.href = article.dataset.url;
+    document.querySelectorAll('.articulo').forEach(article => {
+        article.addEventListener('click', () => {
+            window.location.href = article.dataset.url;
+        });
     });
-  });
 </script>
 
 
